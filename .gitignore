@@ -1,0 +1,8 @@
+# Python Files
+__pycache__/
+
+# VS Code configurations
+.vscode/
+
+# Snippets folder (Will be created upon installation)
+snippets/
