@@ -15,6 +15,8 @@ DEFAULT_SNIPPETS_DIR = f"{HOME}/.snippets"
 SHELLS = [f"{HOME}/.bashrc", f"{HOME}/.zshrc", f"{HOME}/.config/fish/config.fish"]
 
 def init_config_dir(dir):
+    if not path.exists("./snippets"):
+        os.mkdir("./snippets")
     if path.exists(dir):
         return False
     else:
