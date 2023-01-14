@@ -6,3 +6,4 @@ __pycache__/
 
 # Snippets folder (Will be created upon installation)
 snippets/
+out/

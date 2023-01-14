@@ -14,4 +14,8 @@ install:
 	mkdir -p snippets
 	python src/installation/main.py
 
-.SILENT: all install
+save:
+	python src/saving/main.py
+
+.SILENT: all install save
+.PHONY: all install save
