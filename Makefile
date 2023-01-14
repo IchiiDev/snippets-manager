@@ -10,4 +10,8 @@ NO_COMMAND_MESSAGE	=	"Nothing to do here, please type 'make install' or 'make sa
 all:
 	echo $(NO_COMMAND_MESSAGE)
 
-.SILENT: all
+install:
+	mkdir -p snippets
+	python src/installation/main.py
+
+.SILENT: all install
