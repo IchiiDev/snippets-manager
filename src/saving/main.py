@@ -27,9 +27,11 @@ def copy_files():
 def save_snippet(dir):
     elements = []
     for file in os.listdir(f"./snippets/{dir}"):
-        elements.append(f"./snippets/{dir}/{file}")
-    os.system(f"tar -czf ./out/{dir}.tar.gz {' '.join(elements)}")
+        elements.append(f"{file}")
+    os.chdir(f"./snippets/{dir}")
+    os.system(f"tar -czf ../../out/{dir}.tar.gz {' '.join(elements)}")
     print(f"-> Created archive for {dir}.")
+    os.chdir("../../")
 
 if __name__ == "__main__":
     clean_snippets_dir()

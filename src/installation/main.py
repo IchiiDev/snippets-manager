@@ -17,11 +17,8 @@ SHELLS = [f"{HOME}/.bashrc", f"{HOME}/.zshrc", f"{HOME}/.config/fish/config.fish
 def init_config_dir(dir):
     if not path.exists("./snippets"):
         os.mkdir("./snippets")
-    if path.exists(dir):
-        return False
-    else:
+    if not path.exists(dir):
         os.mkdir(dir)
-        return True
 
 def select_shell():
     title = "Please select your shell:"
@@ -57,9 +54,6 @@ def copy_binaries():
 if __name__ == "__main__":
     print("Initialising snippets directory...")
     created = init_config_dir(DEFAULT_SNIPPETS_DIR)
-    if not created:
-        print("Dir already exists... Aborting...")
-        exit(1)
     print("Dir '~/.snippets' created")
     copy_binaries()
     print(f"Binaries copied to {HOME}/bin/snippets.py")
